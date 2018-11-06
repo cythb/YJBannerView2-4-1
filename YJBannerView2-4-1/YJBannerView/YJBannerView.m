@@ -76,7 +76,7 @@ static NSInteger const totalCollectionViewCellCount = 200;
     self.backgroundImageView.hidden = ([self _imageDataSources].count > 0);
     
     if ([self _imageDataSources].count > 1) {
-        self.collectionView.scrollEnabled = YES;
+        self.collectionView.scrollEnabled = _bannerGestureEnable && YES;
         [self setAutoScroll:self.autoScroll];
     } else {
         
@@ -84,7 +84,7 @@ static NSInteger const totalCollectionViewCellCount = 200;
         
         BOOL isCan = ([self _imageDataSources].count == 0)?NO:(self.showFooter?YES:NO);
         
-        self.collectionView.scrollEnabled = isCan;
+        self.collectionView.scrollEnabled = _bannerGestureEnable && isCan;
         
         [self invalidateTimerWhenAutoScroll];
     }
@@ -261,15 +261,17 @@ static NSInteger const totalCollectionViewCellCount = 200;
     if (_bannerGestureEnable && bannerGestureEnable) { // 不操作
     }else if (!_bannerGestureEnable && bannerGestureEnable){
         self.collectionView.canCancelContentTouches = YES;
-        for (NSInteger i = 0; i < self.saveScrollViewGestures.count; i++) {
-            UIGestureRecognizer *gesture = self.saveScrollViewGestures[i];
-            [self.collectionView addGestureRecognizer:gesture];
-        }
+//        for (NSInteger i = 0; i < self.saveScrollViewGestures.count; i++) {
+//            UIGestureRecognizer *gesture = self.saveScrollViewGestures[i];
+//            [self.collectionView addGestureRecognizer:gesture];
+//        }
+        self.collectionView.scrollEnabled = YES;
     }else if (_bannerGestureEnable && !bannerGestureEnable){
         self.collectionView.canCancelContentTouches = NO;
-        for (UIGestureRecognizer *gesture in self.collectionView.gestureRecognizers) {
-            [self.collectionView removeGestureRecognizer:gesture];
-        }
+//        for (UIGestureRecognizer *gesture in self.collectionView.gestureRecognizers) {
+//            [self.collectionView removeGestureRecognizer:gesture];
+//        }
+        self.collectionView.scrollEnabled = NO;
     }
     _bannerGestureEnable = bannerGestureEnable;
 }
