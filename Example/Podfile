@@ -1,0 +1,6 @@
+use_frameworks!
+target 'YJBannerView2-4-1_Tests' do
+  pod 'YJBannerView2-4-1', :path => '../'
+  
+  
+end
