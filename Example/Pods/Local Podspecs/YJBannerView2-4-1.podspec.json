@@ -1,0 +1,22 @@
+{
+  "name": "YJBannerView2-4-1",
+  "version": "0.1.0",
+  "summary": "A short description of YJBannerView2-4-1.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/cythb/YJBannerView2-4-1",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "cythb": "thb@luochen.com"
+  },
+  "source": {
+    "git": "https://github.com/cythb/YJBannerView2-4-1.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "YJBannerView2-4-1/YJBannerView/**/*"
+}

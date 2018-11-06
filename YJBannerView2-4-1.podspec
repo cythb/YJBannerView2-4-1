@@ -30,7 +30,7 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'YJBannerView2-4-1/Classes/**/*'
+  s.source_files = 'YJBannerView2-4-1/YJBannerView/**/*'
   
   # s.resource_bundles = {
   #   'YJBannerView2-4-1' => ['YJBannerView2-4-1/Assets/*.png']
